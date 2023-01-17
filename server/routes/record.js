@@ -40,6 +40,7 @@ recordRoutes.route("/storage/add").post(function (req, response) {
     name: req.body.name,
     price: req.body.price,
     unit: req.body.unit,
+    image: req.body.image,
   };
   db_connect.collection("items").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -56,6 +57,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
       name: req.body.name,
       price: req.body.price,
       unit: req.body.unit,
+      image: req.body.image,
     },
   };
   db_connect
