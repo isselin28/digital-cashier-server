@@ -17,4 +17,12 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-app.get("/");
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    data: {
+      name: "cashier",
+      version: "0.1.0",
+    },
+  });
+});
